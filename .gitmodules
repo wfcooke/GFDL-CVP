@@ -1,0 +1,36 @@
+[submodule "src/shared"]
+	path = src/shared
+	url = https://gitlab.gfdl.noaa.gov/fms/shared.git
+[submodule "src/land_lad2"]
+	path = src/land_lad2
+	url = https://gitlab.gfdl.noaa.gov/fms/land_lad2.git
+[submodule "src/atmos_param_am3"]
+	path = src/atmos_param_am3
+	url = https://gitlab.gfdl.noaa.gov/fms/atmos_param_am3.git
+[submodule "src/atmos_cubed_sphere"]
+	path = src/atmos_cubed_sphere
+	url = https://gitlab.gfdl.noaa.gov/fms/atmos_cubed_sphere.git
+[submodule "src/atmos_drivers"]
+	path = src/atmos_drivers
+	url = https://gitlab.gfdl.noaa.gov/fms/atmos_drivers.git
+[submodule "src/ice_param"]
+	path = src/ice_param
+	url = https://gitlab.gfdl.noaa.gov/fms/ice_param.git
+[submodule "src/SIS2"]
+	path = src/SIS2
+	url = git@github.com:wfcooke/SIS2.git
+[submodule "src/MOM6"]
+	path = src/MOM6
+	url = git@github.com:wfcooke/MOM6.git
+[submodule "src/icebergs"]
+	path = src/icebergs
+	url = https://github.com/NOAA-GFDL/icebergs.git
+[submodule "src/coupler"]
+	path = src/coupler
+	url = https://github.com/NOAA-GFDL/coupler.git
+[submodule "src/atmos_shared"]
+	path = src/atmos_shared
+	url = https://gitlab.gfdl.noaa.gov/fms/atmos_shared.git
+[submodule "src/mkmf"]
+	path = src/mkmf
+	url = https://github.com/NOAA-GFDL/mkmf.git

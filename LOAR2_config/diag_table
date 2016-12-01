@@ -1,0 +1,360 @@
+LOAR2_Control_1990_J40
+1 1 1 0 0 0
+         ## output files
+"atmos_daily",           24,   "hours",  1, "days", "time",
+"atmos_month",            1,   "months", 1, "days", "time",
+"atmos_scalar_month",     1,   "months", 1, "days", "time",
+"ice_month",              1,   "months", 1, "days", "time",
+"iceberg_month",          1,   "months", 1, "days", "time",
+"iceberg_annual",        12,   "months", 1, "days", "time",
+"land_static",           -1,   "months", 1, "days", "time"
+"land_daily",            24,   "hours",  1, "days", "time",
+"land_month",             1,   "months", 1, "days", "time",
+"land_month_inst",       1,    "months", 1, "days", "time"
+"ocean_scalar_month",     1,   "months", 1, "days", "time"
+"ocean_scalar_annual",   12,   "months", 1, "days", "time"
+"ocean_static",          -1,   "months", 1, "days", "time"
+"ocean_month",            1,   "months", 1, "days", "time"
+"ocean_annual",          12,   "months", 1, "days", "time"
+"ocean_z_month",          1,   "months", 1, "days", "time"
+"ocean_z_annual",        12,   "months", 1, "days", "time"
+#
+#=======================
+# ATMOSPHERE DIAGNOSTICS
+#=======================
+#
+## daily output
+ "moist",     "precip",         "precip",         "atmos_daily", "all", .true.,  "none", 2
+ "flux",      "slp",            "slp",            "atmos_daily", "all", .true.,  "none", 2
+## globally averaged ghg
+ "radiation", "rrvch4",         "rrvch4",         "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "rrvco2",         "rrvco2",         "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "rrvf11",         "rrvf11",         "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "rrvf113",        "rrvf113",        "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "rrvf12",         "rrvf12",         "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "rrvf22",         "rrvf22",         "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "rrvn2o",         "rrvn2o",         "atmos_scalar_month", "all", .true., "none", 2
+ "radiation", "solar_constant", "solar_constant", "atmos_scalar_month", "all", .true., "none", 2
+## instantaneous output
+ "cloudrad",  "high_cld_amt",   "high_cld_amt",   "atmos_month", "all", .true.,  "none", 2
+ "cloudrad",  "low_cld_amt",    "low_cld_amt",    "atmos_month", "all", .true.,  "none", 2
+ "cloudrad",  "mid_cld_amt",    "mid_cld_amt",    "atmos_month", "all", .true.,  "none", 2
+ "cloudrad",  "tot_cld_amt",    "tot_cld_amt",    "atmos_month", "all", .true.,  "none", 2
+ "damping",   "taubx",          "taubx",          "atmos_month", "all", .true.,  "none", 2
+ "damping",   "tauby",          "tauby",          "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "bk",             "bk",             "atmos_month", "all", .false., "none", 2
+ "dynamics",  "cld_amt",        "cld_amt",        "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "omega",          "omega",          "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "pk",             "pk",             "atmos_month", "all", .false., "none", 2
+ "dynamics",  "ps",             "ps",             "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "sphum",          "sphum",          "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "temp",           "temp",           "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "ucomp",          "ucomp",          "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "vcomp",          "vcomp",          "atmos_month", "all", .true.,  "none", 2
+ "dynamics",  "zsurf",          "zsurf",          "atmos_month", "all", .false., "none", 2
+ "flux",      "evap",           "evap",           "atmos_month", "all", .true.,  "none", 2
+ "flux",      "ice_mask",       "ice_mask",       "atmos_month", "all", .true.,  "none", 2
+ "flux",      "land_mask",      "land_mask",      "atmos_month", "all", .false., "none", 2
+ "flux",      "lwflx",          "lwflx",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "rh_ref",         "rh_ref",         "atmos_month", "all", .true.,  "none", 2
+ "flux",      "shflx",          "shflx",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "t_ref",          "t_ref",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "t_ref",          "t_ref_max",      "atmos_month", "all",  max,    "none", 2
+ "flux",      "t_ref",          "t_ref_min",      "atmos_month", "all",  min,    "none", 2
+ "flux",      "t_surf",         "t_surf",         "atmos_month", "all", .true.,  "none", 2
+ "flux",      "tau_x",          "tau_x",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "tau_y",          "tau_y",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "u_ref",          "u_ref",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "v_ref",          "v_ref",          "atmos_month", "all", .true.,  "none", 2
+ "flux",      "wind",           "wind",           "atmos_month", "all", .true.,  "none", 2
+ "moist",     "prec_conv",      "prec_conv",      "atmos_month", "all", .true.,  "none", 2
+ "moist",     "prec_ls",        "prec_ls",        "atmos_month", "all", .true.,  "none", 2
+ "moist",     "precip",         "precip",         "atmos_month", "all", .true.,  "none", 2
+ "moist",     "rh",             "rh",             "atmos_month", "all", .true.,  "none", 2
+ "moist",     "snow_conv",      "snow_conv",      "atmos_month", "all", .true.,  "none", 2
+ "moist",     "snow_ls",        "snow_ls",        "atmos_month", "all", .true.,  "none", 2
+ "radiation", "alb_sfc",        "alb_sfc",        "atmos_month", "all", .true.,  "none", 2
+ "radiation", "lwdn_sfc",       "lwdn_sfc",       "atmos_month", "all", .true.,  "none", 2
+ "radiation", "lwdn_sfc_clr",   "lwdn_sfc_clr",   "atmos_month", "all", .true.,  "none", 2
+ "radiation", "lwup_sfc",       "lwup_sfc",       "atmos_month", "all", .true.,  "none", 2
+ "radiation", "lwup_sfc_clr",   "lwup_sfc_clr",   "atmos_month", "all", .true.,  "none", 2
+ "radiation", "netrad_toa",     "netrad_toa",     "atmos_month", "all", .true.,  "none", 2
+ "radiation", "netrad_toa_clr", "netrad_toa_clr", "atmos_month", "all", .true.,"none", 2
+ "radiation", "olr",            "olr",            "atmos_month", "all", .true.,  "none", 2
+ "radiation", "olr_clr",        "olr_clr",        "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swdn_sfc",       "swdn_sfc",       "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swdn_sfc_clr",   "swdn_sfc_clr",   "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swdn_toa",       "swdn_toa",       "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swdn_toa_clr",   "swdn_toa_clr",   "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swup_sfc",       "swup_sfc",       "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swup_sfc_clr",   "swup_sfc_clr",   "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swup_toa",       "swup_toa",       "atmos_month", "all", .true.,  "none", 2
+ "radiation", "swup_toa_clr",   "swup_toa_clr",   "atmos_month", "all", .true.,  "none", 2
+ "ras",       "mc",             "mc",             "atmos_month", "all", .true.,  "none", 2
+#================
+# ICE DIAGNOSTICS
+#================
+ "ice_model", "CALVING",         "CALVING",       "ice_month", "all", .true., "none", 2
+ "ice_model", "CN",              "CN",            "ice_month", "all", .true., "none", 2
+ "ice_model", "HI",              "HI",            "ice_month", "all", .true., "none", 2
+ "ice_model", "RUNOFF",          "RUNOFF",        "ice_month", "all", .true., "none", 2
+ "ice_model", "SSH",             "SSH",           "ice_month", "all", .true., "none", 2
+#================
+# ICEBERG DIAGNOSTICS
+#================
+ "icebergs", "BERG_MELT",       "BERG_MELT",      "iceberg_month", "all", .true., "none", 2
+ "icebergs", "MASS",            "MASS",           "iceberg_month", "all", .true., "none", 2
+ "icebergs", "MELT",            "MELT",           "iceberg_month", "all", .true., "none", 2
+# "icebergs", "BERG_MELT",       "BERG_MELT",      "iceberg_annual", "all", .true., "none", 2
+# "icebergs", "MASS",            "MASS",           "iceberg_annual", "all", .true., "none", 2
+# "icebergs", "MELT",            "MELT",           "iceberg_annual", "all", .true., "none", 2
+#========================
+# LAND DIAGNOSTICS:
+#========================
+# land static output
+"lake",    "lake_depth", "lake_depth", "land_static", "all", .false., "none", 2
+"lake",    "lake_width", "lake_width", "land_static", "all", .false., "none", 2
+"land",    "area_lake",  "lake_area",  "land_static", "all", .false., "none", 2
+"land",    "area_land",  "land_area",  "land_static", "all", .false., "none", 2
+"land",    "area_soil",  "soil_area",  "land_static", "all", .false., "none", 2
+"land",    "cell_area",  "cell_area",  "land_static", "all", .false., "none", 2
+"land",    "geolat_t",   "geolat_t",   "land_static", "all", .false., "none", 1
+"land",    "geolon_t",   "geolon_t",   "land_static", "all", .false., "none", 1
+"land",    "land_frac",  "land_frac",  "land_static", "all", .false., "none", 2
+"land",    "no_riv",     "no_riv",     "land_static", "all", .false., "none", 2
+"river",   "rv_basin",   "rv_basin",   "land_static", "all", .false., "none", 2
+"river",   "rv_dir",     "rv_dir",     "land_static", "all", .false., "none", 2
+"river",   "rv_length",  "rv_length",  "land_static", "all", .false., "none", 2
+"river",   "rv_trav",    "rv_trav",    "land_static", "all", .false., "none", 2
+"soil",    "soil_Ksat",  "soil_Ksat",  "land_static", "all", .false., "none", 2
+"soil",    "soil_rlief", "soil_rlief", "land_static", "all", .false., "none", 2
+"soil",    "soil_sat",   "soil_sat",   "land_static", "all", .false., "none", 2
+"soil",    "soil_type",  "soil_type",  "land_static", "all", .false., "none", 2
+"soil",    "soil_wilt",  "soil_wilt",  "land_static", "all", .false., "none", 2
+# land daily output
+"land",    "geolat_t",   "geolat_t",   "land_daily",  "all", .false., "none", 1
+"land",    "geolon_t",   "geolon_t",   "land_daily",  "all", .false., "none", 1
+"land",    "precip",     "precip",     "land_daily",  "all", .true., "none", 2
+# area fractions for different tile types
+"land",    "geolat_t",   "geolat_t",   "land_month",  "all", .false., "none", 1
+"land",    "geolon_t",   "geolon_t",   "land_month",  "all", .false., "none", 1
+#WFC The following are needed to scale the diagnostics below
+"land",    "area_glac",  "glac_area",  "land_month",  "all", .true., "none", 2
+"land",    "area_ntrl",  "area_ntrl",  "land_month",  "all", .true., "none", 2
+"land",    "frac_glac",  "frac_glac",  "land_month",  "all", .true., "none", 2
+"land",    "frac_lake",  "frac_lake",  "land_month",  "all", .true., "none", 2
+# land multi-level month-average output
+"lake",    "lake_T",     "lake_T",     "land_month",  "all", .true., "none", 2
+"soil",    "soil_T",     "soil_T",     "land_month",  "all", .true., "none", 2
+"soil",    "soil_ice",   "soil_ice",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_liq",   "soil_liq",   "land_month",  "all", .true., "none", 2
+# land one-level month-average output
+"flux",    "t_ref_land", "t_ref",      "land_month",  "all", .true., "none", 2
+"land",    "FWS",        "FWS",        "land_month",  "all", .true., "none", 2
+"land",    "FWSr",       "FWSr",       "land_month",  "all", .true., "none", 2
+"land",    "FWSv",       "FWSv",       "land_month",  "all", .true., "none", 2
+"land",    "LWS",        "LWS",        "land_month",  "all", .true., "none", 2
+"land",    "LWSr",       "LWSr",       "land_month",  "all", .true., "none", 2
+"land",    "LWSv",       "LWSv",       "land_month",  "all", .true., "none", 2
+"land",    "Tca",        "Tca",        "land_month",  "all", .true., "none", 2
+"land",    "Tgrnd",      "Tgrnd",      "land_month",  "all", .true., "none", 2
+"land",    "Trad",       "Trad",       "land_month",  "all", .true., "none", 2
+"land",    "area",       "area",       "land_month",  "all", .true., "none", 2
+"land",    "dis_heat",   "dis_heat",   "land_month",  "all", .true., "none", 2
+"land",    "dis_ice",    "dis_ice",    "land_month",  "all", .true., "none", 2
+"land",    "dis_liq",    "dis_liq",    "land_month",  "all", .true., "none", 2
+"land",    "evap",       "evap_land",  "land_month",  "all", .true., "none", 2
+"land",    "evap_glac",  "evap_glac",  "land_month",  "all", .true., "none", 2
+"land",    "evap_lake",  "evap_lake",  "land_month",  "all", .true., "none", 2
+"land",    "evap_soil",  "evap_soil",  "land_month",  "all", .true., "none", 2
+"land",    "fevapg",     "fevapg",     "land_month",  "all", .true., "none", 2
+"land",    "fevaps",     "fevaps",     "land_month",  "all", .true., "none", 2
+"land",    "fevapv",     "fevapv",     "land_month",  "all", .true., "none", 2
+"land",    "flw",        "flw",        "land_month",  "all", .true., "none", 2
+"land",    "fprec_l",    "fprec_l",    "land_month",  "all", .true., "none", 2
+"land",    "frunf",      "frunf",      "land_month",  "all", .true., "none", 2
+"land",    "fsw",        "fsw",        "land_month",  "all", .true., "none", 2
+"land",    "grnd_flux",  "grnd_flux",  "land_month",  "all", .true., "none", 2
+"land",    "hevap",      "hevap",      "land_month",  "all", .true., "none", 2
+"land",    "hprec",      "hprec",      "land_month",  "all", .true., "none", 2
+"land",    "hrunf",      "hrunf",      "land_month",  "all", .true., "none", 2
+"land",    "lwdn",       "lwdn",       "land_month",  "all", .true., "none", 2
+"land",    "melt",       "melt",       "land_month",  "all", .true., "none", 2
+"land",    "meltg_glac", "meltg_glac", "land_month",  "all", .true., "none", 2
+"land",    "melts",      "melts",      "land_month",  "all", .true., "none", 2
+"land",    "precip",     "precip",     "land_month",  "all", .true., "none", 2
+"land",    "qca",        "qca",        "land_month",  "all", .true., "none", 2
+"land",    "runf",       "runf",       "land_month",  "all", .true., "none", 2
+"land",    "sens",       "sens",       "land_month",  "all", .true., "none", 2
+"land",    "snow",       "snow",       "land_month",  "all", .true., "none", 2
+"land",    "snow_glac",  "snow_glac",  "land_month",  "all", .true., "none", 2
+"land",    "snow_lake",  "snow_lake",  "land_month",  "all", .true., "none", 2
+"land",    "snow_soil",  "snow_soil",  "land_month",  "all", .true., "none", 2
+"land",    "transp",     "transp",     "land_month",  "all", .true., "none", 2
+"land",    "water_lake", "water_lake", "land_month",  "all", .true., "none", 2
+"land",    "water_soil", "water_soil", "land_month",  "all", .true., "none", 2
+"river",   "rv_Qavg",    "rv_Qavg",    "land_month",  "all", .true., "none", 2
+"river",   "rv_T",       "rv_T",       "land_month",  "all", .true., "none", 2
+"river",   "rv_d_h2o",   "rv_d_h2o",   "land_month",  "all", .true., "none", 2
+"river",   "rv_d_hEt",   "rv_d_hEt",   "land_month",  "all", .true., "none", 2
+"river",   "rv_d_ice",   "rv_d_ice",   "land_month",  "all", .true., "none", 2
+"river",   "rv_depth",   "rv_depth",   "land_month",  "all", .true., "none", 2
+"river",   "rv_i_h2o",   "rv_i_h2o",   "land_month",  "all", .true., "none", 2
+"river",   "rv_i_het",   "rv_i_het",   "land_month",  "all", .true., "none", 2
+"river",   "rv_i_ice",   "rv_i_ice",   "land_month",  "all", .true., "none", 2
+"river",   "rv_ice",     "rv_ice",     "land_month",  "all", .true., "none", 2
+"river",   "rv_o_h2o",   "rv_o_h2o",   "land_month",  "all", .true., "none", 2
+"river",   "rv_o_het",   "rv_o_het",   "land_month",  "all", .true., "none", 2
+"river",   "rv_o_ice",   "rv_o_ice",   "land_month",  "all", .true., "none", 2
+"river",   "rv_veloc",   "rv_veloc",   "land_month",  "all", .true., "none", 2
+"river",   "rv_width",   "rv_width",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_fgw",   "soil_fgw",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_fsat",  "soil_fsat",  "land_month",  "all", .true., "none", 2
+"soil",    "soil_psi_n", "soil_psi_n", "land_month",  "all", .true., "none", 2
+"soil",    "soil_rbf",   "soil_rbf",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_rie",   "soil_rie",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_rnu",   "soil_rnu",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_rsn",   "soil_rsn",   "land_month",  "all", .true., "none", 2
+"soil",    "soil_wtdep", "soil_wtdep", "land_month",  "all", .true., "none", 2
+"vegn",    "LAI",        "LAI",        "land_month",  "all", .true., "none", 2
+"vegn",    "an_cl",      "an_cl",      "land_month",  "all", .true., "none", 2
+"vegn",    "an_op",      "an_op",      "land_month",  "all", .true., "none", 2
+"vegn",    "asoil",      "asoil",      "land_month",  "all", .true., "none", 2
+"vegn",    "bl",         "bl",         "land_month",  "all", .true., "none", 2
+"vegn",    "blv",        "blv",        "land_month",  "all", .true., "none", 2
+"vegn",    "br",         "br",         "land_month",  "all", .true., "none", 2
+"vegn",    "bsw",        "bsw",        "land_month",  "all", .true., "none", 2
+"vegn",    "bwood",      "bwood",      "land_month",  "all", .true., "none", 2
+"vegn",    "fsc",        "fsc",        "land_month",  "all", .true., "none", 2
+"vegn",    "gpp",        "gpp",        "land_month",  "all", .true., "none", 2
+"vegn",    "height",     "vegn_height","land_month",  "all", .true., "none", 2
+"vegn",    "nep",        "nep",        "land_month",  "all", .true., "none", 2
+"vegn",    "npp",        "npp",        "land_month",  "all", .true., "none", 2
+"vegn",    "resg",       "resg",       "land_month",  "all", .true., "none", 2
+"vegn",    "resp",       "resp",       "land_month",  "all", .true., "none", 2
+"vegn",    "root_density","vegn_rden", "land_month",  "all", .true., "none", 2
+"vegn",    "root_zeta",  "vegn_rzeta", "land_month",  "all", .true., "none", 2
+"vegn",    "rsoil",      "rsoil",      "land_month",  "all", .true., "none", 2
+"vegn",    "rsoil_fast", "rsoil_fast", "land_month",  "all", .true., "none", 2
+"vegn",    "snow_crit",  "vegn_sncrit","land_month",  "all", .true., "none", 2
+"vegn",    "species",    "species",    "land_month",  "all", .true., "none", 2
+"vegn",    "ssc",        "ssc",        "land_month",  "all", .true., "none", 2
+"vegn",    "temp",       "vegn_T",     "land_month",  "all", .true., "none", 2
+"vegn",    "theta",      "theta",      "land_month",  "all", .true., "none", 2
+"vegn",    "tsoil_av",   "tsoil_av",   "land_month",  "all", .true., "none", 2
+# land monthly instant output
+"land",    "FWS",        "FWS",        "land_month_inst",  "all", .false., "none", 2
+"land",    "FWSr",       "FWSr",       "land_month_inst",  "all", .false., "none", 2
+"land",    "HS",         "HS",         "land_month_inst",  "all", .false., "none", 2
+"land",    "HSr",        "HSr",        "land_month_inst",  "all", .false., "none", 2
+"land",    "LWS",        "LWS",        "land_month_inst",  "all", .false., "none", 2
+"land",    "LWSr",       "LWSr",       "land_month_inst",  "all", .false., "none", 2
+#
+#=======================
+# OCEAN DIAGNOSTICS
+#=======================
+#
+# Monthly scalars
+ "ocean_model", "SSS_global",             "SSS_global",             "ocean_scalar_month",  "all", "mean", "none",2
+ "ocean_model", "SST_global",             "SST_global",             "ocean_scalar_month",  "all", "mean", "none",2
+ "ocean_model", "salt_global",            "salt_global",            "ocean_scalar_month",  "all", "mean", "none",2
+ "ocean_model", "temp_global",            "temp_global",            "ocean_scalar_month",  "all", "mean", "none",2
+# Annual scalars
+ "ocean_model", "SSS_global",             "SSS_global",             "ocean_scalar_annual", "all", "mean", "none",2
+ "ocean_model", "SST_global",             "SST_global",             "ocean_scalar_annual", "all", "mean", "none",2
+ "ocean_model", "salt_global",            "salt_global",            "ocean_scalar_annual", "all", "mean", "none",2
+ "ocean_model", "temp_global",            "temp_global",            "ocean_scalar_annual", "all", "mean", "none",2
+# Static geometry data
+ "ocean_model", "area_t",                 "area_t",                 "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "depth_ocean",            "depth_ocean",            "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "deptho",                 "deptho",                 "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolat",                 "geolat",                 "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolat_c",               "geolat_c",               "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolat_u",               "geolat_u",               "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolat_v",               "geolat_v",               "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolon",                 "geolon",                 "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolon_c",               "geolon_c",               "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolon_u",               "geolon_u",               "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "geolon_v",               "geolon_v",               "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "wet",                    "wet",                    "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "wet_c",                  "wet_c",                  "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "wet_u",                  "wet_u",                  "ocean_static",        "all", "none", "none", 2
+ "ocean_model", "wet_v",                  "wet_v",                  "ocean_static",        "all", "none", "none", 2
+# Monthly averages
+ "ocean_model", "MLD_003",                "MLD_003",                "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "SSH",                    "ssh",                    "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "SSS",                    "sss",                    "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "SST",                    "sst_max",                "ocean_month",         "all", "max",  "none",2
+ "ocean_model", "SST",                    "sst_min",                "ocean_month",         "all", "min",  "none",2
+ "ocean_model", "speed",                  "speed",                  "ocean_month",         "all", "mean", "none",2
+# Monthly surface forcing (mechanical)
+ "ocean_model", "p_surf",                 "p_surf",                 "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "taux",                   "taux",                   "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "tauy",                   "tauy",                   "ocean_month",         "all", "mean", "none",2
+# Monthly surface forcing (mass)
+ "ocean_model", "PRCmE",                  "PRCmE",                  "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "evap",                   "evap",                   "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "fprec",                  "fprec",                  "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "frunoff",                "frunoff",                "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "lprec",                  "lprec",                  "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "lrunoff",                "lrunoff",                "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "net_massin",             "net_massin",             "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "net_massout",            "net_massout",            "ocean_month",         "all", "mean", "none",2
+# Monthly surface forcing (heat)
+ "ocean_model", "Heat_PmE",               "Heat_PmE",               "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "LwLatSens",              "LwLatSens",              "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "SW",                     "SW",                     "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_cond",      "heat_content_cond",      "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_fprec",     "heat_content_fprec",     "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_frunoff",   "heat_content_frunoff",   "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_lprec",     "heat_content_lprec",     "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_lrunoff",   "heat_content_lrunoff",   "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_massin",    "heat_content_massin",    "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_massout",   "heat_content_massout",   "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "heat_content_surfwater", "heat_content_surfwater", "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "net_heat_coupler",       "net_heat_coupler",       "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "net_heat_surface",       "net_heat_surface",       "ocean_month",         "all", "mean", "none",2
+# Monthly surface forcing (salt)
+ "ocean_model", "salt_flux",              "salt_flux",              "ocean_month",         "all", "mean", "none",2
+ "ocean_model", "vh_rho",                 "vh_rho",                 "ocean_month",         "all", "mean", "none",2
+# Annual diagnostics
+# "ocean_model", "LwLatSens",              "LwLatSens",              "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "MEKE_KH",                "MEKE_KH",                "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "MEKE_Le",                "MEKE_Le",                "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "MEKE_Ue",                "MEKE_Ue",                "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "MLD_003",                "MLD_003_max",            "ocean_annual",        "all", "max",  "none",2
+ "ocean_model", "MLD_003",                "MLD_003_min",            "ocean_annual",        "all", "min",  "none",2
+# "ocean_model", "PRCmE",                  "PRCmE",                  "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "SW",                     "SW",                     "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "S_adx",                  "S_adx",                  "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "S_ady",                  "S_ady",                  "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "T_adx",                  "T_adx",                  "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "T_ady",                  "T_ady",                  "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "net_heat_surface",       "net_heat_surface",       "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "p_surf",                 "p_surf",                 "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "salt_flux",              "salt_flux",              "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "taux",                   "taux",                   "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "tauy",                   "tauy",                   "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "uhml",                   "uhml",                   "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "ustar",                  "ustar",                  "ocean_annual",        "all", "mean", "none",2
+ "ocean_model", "vhml",                   "vhml",                   "ocean_annual",        "all", "mean", "none",2
+# "ocean_model", "vh_rho",                 "vh_rho",                 "ocean_annual",        "all", "mean", "none",2
+"ocean_model_z_new", "rhoinsitu",         "rhoinsitu",              "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "rhopot0",           "rhopot0",                "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "rhopot2",           "rhopot2",                "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "so",                "so",                     "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "thetao",            "thetao",                 "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "uh",                "uh",                     "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "uo",                "uo",                     "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "vh",                "vh",                     "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "vo",                "vo",                     "ocean_z_month",       "all", "mean", "none",2
+"ocean_model_z_new", "age",               "age",                    "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "rhoinsitu",         "rhoinsitu",              "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "rhopot0",           "rhopot0",                "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "rhopot2",           "rhopot2",                "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "so",                "so",                     "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "thetao",            "thetao",                 "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "uh",                "uh",                     "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "uo",                "uo",                     "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "vh",                "vh",                     "ocean_z_annual",      "all", "mean", "none",2
+#"ocean_model_z_new", "vo",                "vo",                     "ocean_z_annual",      "all", "mean", "none",2

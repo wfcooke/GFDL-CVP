@@ -1,0 +1,3 @@
+"ICE", "sic_obs"        , ""         ,""       , "none" ,  0.00
+"ICE", "sit_obs"        , ""         ,""       , "none" ,  0.00
+"ICE", "sst_obs"        , "SST"         ,"./INPUT/sst_ice_clim.nc"       , "bilinear" ,  1.0
