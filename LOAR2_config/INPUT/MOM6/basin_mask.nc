@@ -1,0 +1,1 @@
+.datasets/MOM6/basin_mask.nc
