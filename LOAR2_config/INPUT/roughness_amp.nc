@@ -1,0 +1,1 @@
+.datasets/MOM6/roughness_amp.nc

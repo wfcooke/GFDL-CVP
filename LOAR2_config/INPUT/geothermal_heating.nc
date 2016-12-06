@@ -1,0 +1,1 @@
+.datasets/MOM6/geothermal_heating.nc
