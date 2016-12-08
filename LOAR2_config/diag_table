@@ -1,6 +1,6 @@
-LOAR2_Control_1990_J40
-1 1 1 0 0 0
-         ## output files
+LOAR2_test_case
+1 1 1 0 0 0 
+## output files
 "atmos_daily",           24,   "hours",  1, "days", "time",
 "atmos_month",            1,   "months", 1, "days", "time",
 "atmos_scalar_month",     1,   "months", 1, "days", "time",
@@ -18,6 +18,8 @@ LOAR2_Control_1990_J40
 "ocean_annual",          12,   "months", 1, "days", "time"
 "ocean_z_month",          1,   "months", 1, "days", "time"
 "ocean_z_annual",        12,   "months", 1, "days", "time"
+
+
 #
 #=======================
 # ATMOSPHERE DIAGNOSTICS
@@ -26,6 +28,10 @@ LOAR2_Control_1990_J40
 ## daily output
  "moist",     "precip",         "precip",         "atmos_daily", "all", .true.,  "none", 2
  "flux",      "slp",            "slp",            "atmos_daily", "all", .true.,  "none", 2
+ "flux",      "t_ref",          "t_ref",          "atmos_daily", "all", .true.,  "none", 2
+ "flux",      "t_ref",          "t_ref_min",      "atmos_daily", "all",  min,    "none", 2
+ "flux",      "t_ref",          "t_ref_max",      "atmos_daily", "all",  max,    "none", 2
+
 ## globally averaged ghg
  "radiation", "rrvch4",         "rrvch4",         "atmos_scalar_month", "all", .true., "none", 2
  "radiation", "rrvco2",         "rrvco2",         "atmos_scalar_month", "all", .true., "none", 2
@@ -35,6 +41,7 @@ LOAR2_Control_1990_J40
  "radiation", "rrvf22",         "rrvf22",         "atmos_scalar_month", "all", .true., "none", 2
  "radiation", "rrvn2o",         "rrvn2o",         "atmos_scalar_month", "all", .true., "none", 2
  "radiation", "solar_constant", "solar_constant", "atmos_scalar_month", "all", .true., "none", 2
+
 ## instantaneous output
  "cloudrad",  "high_cld_amt",   "high_cld_amt",   "atmos_month", "all", .true.,  "none", 2
  "cloudrad",  "low_cld_amt",    "low_cld_amt",    "atmos_month", "all", .true.,  "none", 2
@@ -91,6 +98,7 @@ LOAR2_Control_1990_J40
  "radiation", "swup_toa",       "swup_toa",       "atmos_month", "all", .true.,  "none", 2
  "radiation", "swup_toa_clr",   "swup_toa_clr",   "atmos_month", "all", .true.,  "none", 2
  "ras",       "mc",             "mc",             "atmos_month", "all", .true.,  "none", 2
+
 #================
 # ICE DIAGNOSTICS
 #================
@@ -99,15 +107,19 @@ LOAR2_Control_1990_J40
  "ice_model", "HI",              "HI",            "ice_month", "all", .true., "none", 2
  "ice_model", "RUNOFF",          "RUNOFF",        "ice_month", "all", .true., "none", 2
  "ice_model", "SSH",             "SSH",           "ice_month", "all", .true., "none", 2
+
 #================
 # ICEBERG DIAGNOSTICS
 #================
  "icebergs", "BERG_MELT",       "BERG_MELT",      "iceberg_month", "all", .true., "none", 2
  "icebergs", "MASS",            "MASS",           "iceberg_month", "all", .true., "none", 2
  "icebergs", "MELT",            "MELT",           "iceberg_month", "all", .true., "none", 2
+
 # "icebergs", "BERG_MELT",       "BERG_MELT",      "iceberg_annual", "all", .true., "none", 2
 # "icebergs", "MASS",            "MASS",           "iceberg_annual", "all", .true., "none", 2
 # "icebergs", "MELT",            "MELT",           "iceberg_annual", "all", .true., "none", 2
+
+
 #========================
 # LAND DIAGNOSTICS:
 #========================
@@ -131,10 +143,12 @@ LOAR2_Control_1990_J40
 "soil",    "soil_sat",   "soil_sat",   "land_static", "all", .false., "none", 2
 "soil",    "soil_type",  "soil_type",  "land_static", "all", .false., "none", 2
 "soil",    "soil_wilt",  "soil_wilt",  "land_static", "all", .false., "none", 2
+
 # land daily output
 "land",    "geolat_t",   "geolat_t",   "land_daily",  "all", .false., "none", 1
 "land",    "geolon_t",   "geolon_t",   "land_daily",  "all", .false., "none", 1
 "land",    "precip",     "precip",     "land_daily",  "all", .true., "none", 2
+
 # area fractions for different tile types
 "land",    "geolat_t",   "geolat_t",   "land_month",  "all", .false., "none", 1
 "land",    "geolon_t",   "geolon_t",   "land_month",  "all", .false., "none", 1
@@ -143,11 +157,13 @@ LOAR2_Control_1990_J40
 "land",    "area_ntrl",  "area_ntrl",  "land_month",  "all", .true., "none", 2
 "land",    "frac_glac",  "frac_glac",  "land_month",  "all", .true., "none", 2
 "land",    "frac_lake",  "frac_lake",  "land_month",  "all", .true., "none", 2
+
 # land multi-level month-average output
 "lake",    "lake_T",     "lake_T",     "land_month",  "all", .true., "none", 2
 "soil",    "soil_T",     "soil_T",     "land_month",  "all", .true., "none", 2
 "soil",    "soil_ice",   "soil_ice",   "land_month",  "all", .true., "none", 2
 "soil",    "soil_liq",   "soil_liq",   "land_month",  "all", .true., "none", 2
+
 # land one-level month-average output
 "flux",    "t_ref_land", "t_ref",      "land_month",  "all", .true., "none", 2
 "land",    "FWS",        "FWS",        "land_month",  "all", .true., "none", 2
@@ -242,6 +258,8 @@ LOAR2_Control_1990_J40
 "vegn",    "temp",       "vegn_T",     "land_month",  "all", .true., "none", 2
 "vegn",    "theta",      "theta",      "land_month",  "all", .true., "none", 2
 "vegn",    "tsoil_av",   "tsoil_av",   "land_month",  "all", .true., "none", 2
+
+
 # land monthly instant output
 "land",    "FWS",        "FWS",        "land_month_inst",  "all", .false., "none", 2
 "land",    "FWSr",       "FWSr",       "land_month_inst",  "all", .false., "none", 2
@@ -249,21 +267,23 @@ LOAR2_Control_1990_J40
 "land",    "HSr",        "HSr",        "land_month_inst",  "all", .false., "none", 2
 "land",    "LWS",        "LWS",        "land_month_inst",  "all", .false., "none", 2
 "land",    "LWSr",       "LWSr",       "land_month_inst",  "all", .false., "none", 2
+
 #
 #=======================
 # OCEAN DIAGNOSTICS
 #=======================
 #
+
 # Monthly scalars
  "ocean_model", "SSS_global",             "SSS_global",             "ocean_scalar_month",  "all", "mean", "none",2
  "ocean_model", "SST_global",             "SST_global",             "ocean_scalar_month",  "all", "mean", "none",2
- "ocean_model", "salt_global",            "salt_global",            "ocean_scalar_month",  "all", "mean", "none",2
- "ocean_model", "temp_global",            "temp_global",            "ocean_scalar_month",  "all", "mean", "none",2
+ "ocean_model", "thetaoga",               "thetaoga",               "ocean_scalar_month",  "all", "mean", "none",2
+ "ocean_model", "soga",                   "soga",                   "ocean_scalar_month",  "all", "mean", "none",2
+
 # Annual scalars
  "ocean_model", "SSS_global",             "SSS_global",             "ocean_scalar_annual", "all", "mean", "none",2
  "ocean_model", "SST_global",             "SST_global",             "ocean_scalar_annual", "all", "mean", "none",2
- "ocean_model", "salt_global",            "salt_global",            "ocean_scalar_annual", "all", "mean", "none",2
- "ocean_model", "temp_global",            "temp_global",            "ocean_scalar_annual", "all", "mean", "none",2
+
 # Static geometry data
  "ocean_model", "area_t",                 "area_t",                 "ocean_static",        "all", "none", "none", 2
  "ocean_model", "depth_ocean",            "depth_ocean",            "ocean_static",        "all", "none", "none", 2
@@ -280,6 +300,7 @@ LOAR2_Control_1990_J40
  "ocean_model", "wet_c",                  "wet_c",                  "ocean_static",        "all", "none", "none", 2
  "ocean_model", "wet_u",                  "wet_u",                  "ocean_static",        "all", "none", "none", 2
  "ocean_model", "wet_v",                  "wet_v",                  "ocean_static",        "all", "none", "none", 2
+
 # Monthly averages
  "ocean_model", "MLD_003",                "MLD_003",                "ocean_month",         "all", "mean", "none",2
  "ocean_model", "SSH",                    "ssh",                    "ocean_month",         "all", "mean", "none",2
@@ -287,10 +308,12 @@ LOAR2_Control_1990_J40
  "ocean_model", "SST",                    "sst_max",                "ocean_month",         "all", "max",  "none",2
  "ocean_model", "SST",                    "sst_min",                "ocean_month",         "all", "min",  "none",2
  "ocean_model", "speed",                  "speed",                  "ocean_month",         "all", "mean", "none",2
+
 # Monthly surface forcing (mechanical)
  "ocean_model", "p_surf",                 "p_surf",                 "ocean_month",         "all", "mean", "none",2
  "ocean_model", "taux",                   "taux",                   "ocean_month",         "all", "mean", "none",2
  "ocean_model", "tauy",                   "tauy",                   "ocean_month",         "all", "mean", "none",2
+
 # Monthly surface forcing (mass)
  "ocean_model", "PRCmE",                  "PRCmE",                  "ocean_month",         "all", "mean", "none",2
  "ocean_model", "evap",                   "evap",                   "ocean_month",         "all", "mean", "none",2
@@ -300,6 +323,7 @@ LOAR2_Control_1990_J40
  "ocean_model", "lrunoff",                "lrunoff",                "ocean_month",         "all", "mean", "none",2
  "ocean_model", "net_massin",             "net_massin",             "ocean_month",         "all", "mean", "none",2
  "ocean_model", "net_massout",            "net_massout",            "ocean_month",         "all", "mean", "none",2
+
 # Monthly surface forcing (heat)
  "ocean_model", "Heat_PmE",               "Heat_PmE",               "ocean_month",         "all", "mean", "none",2
  "ocean_model", "LwLatSens",              "LwLatSens",              "ocean_month",         "all", "mean", "none",2
@@ -314,9 +338,12 @@ LOAR2_Control_1990_J40
  "ocean_model", "heat_content_surfwater", "heat_content_surfwater", "ocean_month",         "all", "mean", "none",2
  "ocean_model", "net_heat_coupler",       "net_heat_coupler",       "ocean_month",         "all", "mean", "none",2
  "ocean_model", "net_heat_surface",       "net_heat_surface",       "ocean_month",         "all", "mean", "none",2
+
 # Monthly surface forcing (salt)
  "ocean_model", "salt_flux",              "salt_flux",              "ocean_month",         "all", "mean", "none",2
+
  "ocean_model", "vh_rho",                 "vh_rho",                 "ocean_month",         "all", "mean", "none",2
+
 # Annual diagnostics
 # "ocean_model", "LwLatSens",              "LwLatSens",              "ocean_annual",        "all", "mean", "none",2
  "ocean_model", "MEKE_KH",                "MEKE_KH",                "ocean_annual",        "all", "mean", "none",2
@@ -339,6 +366,7 @@ LOAR2_Control_1990_J40
  "ocean_model", "ustar",                  "ustar",                  "ocean_annual",        "all", "mean", "none",2
  "ocean_model", "vhml",                   "vhml",                   "ocean_annual",        "all", "mean", "none",2
 # "ocean_model", "vh_rho",                 "vh_rho",                 "ocean_annual",        "all", "mean", "none",2
+
 "ocean_model_z_new", "rhoinsitu",         "rhoinsitu",              "ocean_z_month",       "all", "mean", "none",2
 "ocean_model_z_new", "rhopot0",           "rhopot0",                "ocean_z_month",       "all", "mean", "none",2
 "ocean_model_z_new", "rhopot2",           "rhopot2",                "ocean_z_month",       "all", "mean", "none",2
@@ -348,6 +376,7 @@ LOAR2_Control_1990_J40
 "ocean_model_z_new", "uo",                "uo",                     "ocean_z_month",       "all", "mean", "none",2
 "ocean_model_z_new", "vh",                "vh",                     "ocean_z_month",       "all", "mean", "none",2
 "ocean_model_z_new", "vo",                "vo",                     "ocean_z_month",       "all", "mean", "none",2
+
 "ocean_model_z_new", "age",               "age",                    "ocean_z_annual",      "all", "mean", "none",2
 #"ocean_model_z_new", "rhoinsitu",         "rhoinsitu",              "ocean_z_annual",      "all", "mean", "none",2
 #"ocean_model_z_new", "rhopot0",           "rhopot0",                "ocean_z_annual",      "all", "mean", "none",2
