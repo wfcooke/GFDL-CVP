@@ -1,1 +1,0 @@
-./datasets/c48/C48_mosaic_tile6XC48_mosaic_tile6.nc

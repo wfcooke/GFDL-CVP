@@ -1,0 +1,3 @@
+#override ICE_STATS_INTERVAL = 0.25
+#override DO_ICEBERGS = True
+#override ICE_BOUNDS_CHECK = False

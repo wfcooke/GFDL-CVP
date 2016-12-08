@@ -1,1 +1,0 @@
-.datasets/MOM6/KH_background_2d.nc

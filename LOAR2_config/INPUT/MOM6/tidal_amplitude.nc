@@ -1,1 +1,0 @@
-.datasets/MOM6/tidal_amplitude.nc

@@ -1,1 +1,0 @@
-.datasets/MOM6/diag_vgrid.nc

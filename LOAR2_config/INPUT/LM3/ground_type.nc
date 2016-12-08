@@ -1,1 +1,0 @@
-.datasets/LM3/ground_type.nc

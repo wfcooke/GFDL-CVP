@@ -1,1 +1,0 @@
-.datasets/MOM6/seawifs_1998-2006_smoothed_2X.nc

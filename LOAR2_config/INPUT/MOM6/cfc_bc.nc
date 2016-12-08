@@ -1,1 +1,0 @@
-.datasets/MOM6/cfc_bc.nc

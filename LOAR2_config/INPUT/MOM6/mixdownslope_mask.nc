@@ -1,1 +1,0 @@
-.datasets/MOM6/mixdownslope_mask.nc

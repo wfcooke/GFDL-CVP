@@ -1,1 +1,0 @@
-.datasets/MOM6/WOA05_pottemp_salt.nc
