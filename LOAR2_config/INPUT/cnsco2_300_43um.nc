@@ -1,0 +1,1 @@
+.datasets/ATMOS_COMMON/cnsco2_300_43um.nc

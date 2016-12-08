@@ -130,8 +130,9 @@
 /
 
  &coupler_nml
-        months = 12,
-        days   = 0,
+        months = 0,
+        days   = 1,
+        hours  = 0,
         current_date = 1,1,1,0,0,0,
         calendar = 'julian',
         dt_cpld = 3600,
@@ -140,11 +141,11 @@
         do_land = .true.,
         do_ice = .true.,
         do_ocean = .true.,
-        atmos_npes = 192,
-        atmos_nthreads = 2
+        atmos_npes = 96,
+        atmos_nthreads = 1
         do_concurrent_radiation=.false.
         radiation_nthreads = 1
-        ocean_npes = 480,
+        ocean_npes = 120,
         concurrent = .true.
         use_lag_fluxes=.true.
         check_stocks=0
@@ -205,13 +206,13 @@
 /
 
  &dummy_ice_model_nml
-       ice_layout = 0,8
+       ice_layout = 0,4
        ice_io_layout = 1,1
        ice_mask_table='MOM_mask_table'
 /
 
  &dummy_ocean_model_nml
-       ocean_layout = 16,30
+       ocean_layout = 12,10
        ocean_io_layout = 1,1
        ocean_mask_table='MOM_mask_table'
 /
@@ -267,7 +268,7 @@
 /
 
  &fv_core_nml
-        layout   = 4,8
+        layout   = 4,4
         io_layout = 1,1
         npx      = 49,
         npy      = 49,
@@ -341,7 +342,7 @@
 
  &icebergs_nml
         verbose=.false.,
-        verbose_hrs=720,
+        verbose_hrs=6,
         traj_sample_hrs=0,
         debug=.false.,
         really_debug=.false.,
@@ -379,7 +380,7 @@
 /
 
  &land_model_nml
-       layout=4,8
+       layout=4,4
        io_layout=1,1
 /
 

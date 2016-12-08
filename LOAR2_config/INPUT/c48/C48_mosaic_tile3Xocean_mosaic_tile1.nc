@@ -1,1 +1,0 @@
-./datasets/c48/C48_mosaic_tile3Xocean_mosaic_tile1.nc
