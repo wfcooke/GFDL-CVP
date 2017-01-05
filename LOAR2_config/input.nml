@@ -16,7 +16,7 @@
 
  &aerosol_nml
         use_aerosol_timeseries = .false.
-        time_varying_species = F,F,F,F,F,F,F,F,F,F,F,F
+        time_varying_species = F,F,F,F,F,F,F,F,F,F,F,F,F
         aerosol_dataset_entry =  1990, 1, 1, 0, 0, 0,
                                  1990, 1, 1, 0, 0, 0,
                                  1990, 1, 1, 0, 0, 0,
@@ -29,47 +29,147 @@
                                  1990, 1, 1, 0, 0, 0,
                                  1990, 1, 1, 0, 0, 0,
                                  1990, 1, 1, 0, 0, 0,
-        family_names = "small_dust", "large_dust", "sulfate", "aerosol"
-        in_family1 = F,F,F,T,T,T,T,F,T,F,F,F,
-        in_family2 = F,F,F,F,F,F,F,F,F,T,T,T,
-        in_family3 = T,F,F,F,F,F,F,F,F,F,F,F,
-        in_family4 = T,T,T,T,T,T,T,T,T,T,T,T,
-        data_names = "so4", "black_carbon", "organic_carbon", "dust_0.1",
-                     "dust_0.2", "dust_0.4", "dust_0.8", "sea_salt",
-                     "dust_1.0", "dust_2.0", "dust_4.0", "dust_8.0",
+                                 1990, 1, 1, 0, 0, 0,
+        family_names = "small_dust", "large_dust", "small_seasalt","large_ssalt","sulfate", "blk_carbon", "org_carbon", "aerosol"
+        in_family1 = F,F,F,F,F,F,F,F,T,F,F,F,F
+        in_family2 = F,F,F,F,F,F,F,F,F,T,T,T,T
+        in_family3 = F,F,F,T,T,F,F,F,F,F,F,F,F
+        in_family4 = F,F,F,F,F,T,T,T,F,F,F,F,F
+        in_family5 = T,F,F,F,F,F,F,F,F,F,F,F,F
+        in_family6 = F,F,T,F,F,F,F,F,F,F,F,F,F
+        in_family7 = F,T,F,F,F,F,F,F,F,F,F,F,F
+        in_family8 = T,T,T,T,T,T,T,T,T,T,T,T,T,
+        data_names = "so4", "organic_carbon", "black_carbon", 
+                     "seasalt1", "seasalt2", "seasalt3", "seasalt4", "seasalt5"
+                     "dust1", "dust2", "dust3", "dust4", "dust5"
         filename = "aerosol.climatology.nc"
 /
 
  &aerosolrad_package_nml
-        volcanic_dataset_entry = 1,1,1,0,0,0,
-        using_volcanic_lw_files = .false.,
-        lw_ext_filename = "extlw_data.nc "
-        lw_ext_root = "extlw"
-        lw_asy_filename = "             "
-        lw_asy_root = "     "
-        lw_ssa_filename = "             "
-        lw_ssa_root = "     "
-        using_volcanic_sw_files = .false.,
-        sw_ext_filename = "extsw_data.nc "
-        sw_ext_root = "extsw"
-        sw_ssa_filename = "omgsw_data.nc "
-        sw_ssa_root = "omgsw"
-        sw_asy_filename = "asmsw_data.nc "
-        sw_asy_root = "asmsw"
-        do_lwaerosol = .true.,
-        do_swaerosol = .true.,
-        aerosol_data_set = 'shettle_fenn',
-        optical_filename = "aerosol.optical.dat",
-        aerosol_optical_names = "sulfate_30%", "sulfate_35%", "sulfate_40%", "sulfate_45%",
-                                "sulfate_50%", "sulfate_55%", "sulfate_60%", "sulfate_65%",
-                                "sulfate_70%", "sulfate_75%", "sulfate_80%", "sulfate_82%",
-                                "sulfate_84%", "sulfate_86%", "sulfate_88%", "sulfate_90%",
-                                "sulfate_91%", "sulfate_92%", "sulfate_93%", "sulfate_94%",
-                                "sulfate_95%", "sulfate_96%", "sulfate_97%", "sulfate_98%",
-                                "sulfate_99%", "sulfate_100%","organic_carbon","soot",
-                                "sea_salt",    "dust_0.1",    "dust_0.2",    "dust_0.4",
-                                "dust_0.8",    "dust_1.0",    "dust_2.0",    "dust_4.0",
-                                "dust_8.0"
+    volcanic_dataset_entry = 1, 1, 1, 0, 0, 0,
+    using_volcanic_lw_files = .false.,
+    using_volcanic_sw_files = .false.,
+    do_lwaerosol = .true.,
+    do_swaerosol = .true.,
+    aerosol_data_set = "Ginoux_Reddy"
+    optical_filename = "Ginoux_Reddy_2005",
+    sulfate_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98, 
+    omphilic_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    bcphilic_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    seasalt1_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    seasalt2_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    seasalt3_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    seasalt4_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    seasalt5_indices = 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+                      30,35,35,35,35,35,40,40,40,40,40,45,45,45,45,45,
+                      50,50,50,50,50,55,55,55,55,55,60,60,60,60,60,65,
+                      65,65,65,65,70,70,70,70,70,75,75,75,75,75,80,80,
+                      80,80,82,82,84,84,86,86,88,88,90,91,92,93,94,95,
+                      96,97,98,98,98,
+    aerosol_optical_names = "sulfate_30%", "sulfate_35%", "sulfate_40%", "sulfate_45%",
+                            "sulfate_50%", "sulfate_55%", "sulfate_60%", "sulfate_65%",
+                            "sulfate_70%", "sulfate_75%", "sulfate_80%", "sulfate_82%",
+                            "sulfate_84%", "sulfate_86%", "sulfate_88%", "sulfate_90%",
+                            "sulfate_91%", "sulfate_92%", "sulfate_93%", "sulfate_94%",
+                            "sulfate_95%", "sulfate_96%", "sulfate_97%", "sulfate_98%",
+                            "sulfate_99%", "sulfate_100%","organic_carbon","soot",
+                            "sea_salt",    "dust_0.1",    "dust_0.2",    "dust_0.4",
+                            "dust_0.8",    "dust_1.0",    "dust_2.0",    "dust_4.0",
+                            "dust_8.0",
+                            "dust1",       "dust2",         "dust3",        "dust4",
+                            "dust5",       "bcphobic",      "omphobic",     "bcdry"
+                            "omphilic_30%", "omphilic_35%", "omphilic_40%", "omphilic_45%",
+                            "omphilic_50%", "omphilic_55%", "omphilic_60%", "omphilic_65%",
+                            "omphilic_70%", "omphilic_75%", "omphilic_80%", "omphilic_82%",
+                            "omphilic_84%", "omphilic_86%", "omphilic_88%", "omphilic_90%",
+                            "omphilic_91%", "omphilic_92%", "omphilic_93%", "omphilic_94%",
+                            "omphilic_95%", "omphilic_96%", "omphilic_97%", "omphilic_98%",
+                            "omphilic_99%",
+                            "bcphilic_30%", "bcphilic_35%", "bcphilic_40%", "bcphilic_45%",
+                            "bcphilic_50%", "bcphilic_55%", "bcphilic_60%", "bcphilic_65%",
+                            "bcphilic_70%", "bcphilic_75%", "bcphilic_80%", "bcphilic_82%",
+                            "bcphilic_84%", "bcphilic_86%", "bcphilic_88%", "bcphilic_90%",
+                            "bcphilic_91%", "bcphilic_92%", "bcphilic_93%", "bcphilic_94%",
+                            "bcphilic_95%", "bcphilic_96%", "bcphilic_97%", "bcphilic_98%",
+                            "bcphilic_99%",
+                            "seasalt1_30%", "seasalt1_35%", "seasalt1_40%", "seasalt1_45%",
+                            "seasalt1_50%", "seasalt1_55%", "seasalt1_60%", "seasalt1_65%",
+                            "seasalt1_70%", "seasalt1_75%", "seasalt1_80%", "seasalt1_82%",
+                            "seasalt1_84%", "seasalt1_86%", "seasalt1_88%", "seasalt1_90%",
+                            "seasalt1_91%", "seasalt1_92%", "seasalt1_93%", "seasalt1_94%",
+                            "seasalt1_95%", "seasalt1_96%", "seasalt1_97%", "seasalt1_98%",
+                            "seasalt1_99%",
+                            "seasalt2_30%", "seasalt2_35%", "seasalt2_40%", "seasalt2_45%",
+                            "seasalt2_50%", "seasalt2_55%", "seasalt2_60%", "seasalt2_65%",
+                            "seasalt2_70%", "seasalt2_75%", "seasalt2_80%", "seasalt2_82%",
+                            "seasalt2_84%", "seasalt2_86%", "seasalt2_88%", "seasalt2_90%",
+                            "seasalt2_91%", "seasalt2_92%", "seasalt2_93%", "seasalt2_94%",
+                            "seasalt2_95%", "seasalt2_96%", "seasalt2_97%", "seasalt2_98%",
+                            "seasalt2_99%",
+                            "seasalt3_30%", "seasalt3_35%", "seasalt3_40%", "seasalt3_45%",
+                            "seasalt3_50%", "seasalt3_55%", "seasalt3_60%", "seasalt3_65%",
+                            "seasalt3_70%", "seasalt3_75%", "seasalt3_80%", "seasalt3_82%",
+                            "seasalt3_84%", "seasalt3_86%", "seasalt3_88%", "seasalt3_90%",
+                            "seasalt3_91%", "seasalt3_92%", "seasalt3_93%", "seasalt3_94%",
+                            "seasalt3_95%", "seasalt3_96%", "seasalt3_97%", "seasalt3_98%",
+                            "seasalt3_99%",
+                            "seasalt4_30%", "seasalt4_35%", "seasalt4_40%", "seasalt4_45%",
+                            "seasalt4_50%", "seasalt4_55%", "seasalt4_60%", "seasalt4_65%",
+                            "seasalt4_70%", "seasalt4_75%", "seasalt4_80%", "seasalt4_82%",
+                            "seasalt4_84%", "seasalt4_86%", "seasalt4_88%", "seasalt4_90%",
+                            "seasalt4_91%", "seasalt4_92%", "seasalt4_93%", "seasalt4_94%",
+                            "seasalt4_95%", "seasalt4_96%", "seasalt4_97%", "seasalt4_98%",
+                            "seasalt4_99%",
+                            "seasalt5_30%", "seasalt5_35%", "seasalt5_40%", "seasalt5_45%",
+                            "seasalt5_50%", "seasalt5_55%", "seasalt5_60%", "seasalt5_65%",
+                            "seasalt5_70%", "seasalt5_75%", "seasalt5_80%", "seasalt5_82%",
+                            "seasalt5_84%", "seasalt5_86%", "seasalt5_88%", "seasalt5_90%",
+                            "seasalt5_91%", "seasalt5_92%", "seasalt5_93%", "seasalt5_94%",
+                            "seasalt5_95%", "seasalt5_96%", "seasalt5_97%", "seasalt5_98%",
+                            "seasalt5_99%"
 /
 
  &amip_interp_nml
