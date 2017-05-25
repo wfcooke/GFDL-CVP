@@ -6,7 +6,6 @@ THERMO_SPANS_COUPLING = True
 #override DT = 3600.
 #override DT_THERM = 7200.
 #override Z_OUTPUT_GRID_FILE = "diag_vgrid.nc"
-#override DIAG_REMAP_Z_GRID_DEF = "FILE:diag_vgrid.nc,zw"
 #override KHTR = 0.0
 #override KHTH = 0.0
 #override MEKE_KHTH_FAC = 1.0
