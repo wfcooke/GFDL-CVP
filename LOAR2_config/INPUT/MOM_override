@@ -2,7 +2,7 @@
 THERMO_SPANS_COUPLING = True
 #override MAX_P_SURF = 0.0
 #override USE_KH_BG_2D = True
-#override ENERGYSAVEDAYS = 0.25
+#override ENERGYSAVEDAYS = 0.125
 #override DT = 3600.
 #override DT_THERM = 7200.
 #override Z_OUTPUT_GRID_FILE = "diag_vgrid.nc"
